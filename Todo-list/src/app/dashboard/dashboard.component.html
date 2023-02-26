@@ -1,0 +1,39 @@
+<div id="main-container">
+    <div id="list-container">
+        <div class="lists-container"  *ngFor="let list of lists">
+            <app-single-list [list]="list"></app-single-list>       
+        </div> 
+
+    </div>
+    <div id="add-list-container">
+        <div id="add-list" [class.mat-elevation-z8]="true">
+            <h1>Create New Todo List</h1>
+            <div>
+                <form [formGroup]="listForm">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Title</mat-label>
+                        <input matInput type="text" formControlName="title">
+                        <mat-error *ngIf="title?.errors?.['required']">
+                            Title is required.
+                        </mat-error>
+                        <mat-error *ngIf="title?.errors?.['minlength']">
+                            Title should have minimum of 5 characters.
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Description</mat-label>
+                        <textarea matInput type="text" formControlName="description"></textarea>
+                        <mat-error *ngIf="description?.errors?.['required']">
+                            Description is required.
+                        </mat-error>
+                      
+                    </mat-form-field>
+                    <button mat-button (click)="createList()" >Create</button>
+                </form>
+            </div>
+        </div>
+        
+
+
+    </div>
+</div>

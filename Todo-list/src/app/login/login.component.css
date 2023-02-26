@@ -1,0 +1,48 @@
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    align-items: center;
+    /* border: 1px solid gray; */
+}
+#login-form{
+    margin-top: 7%;
+    width: 40vw;
+    margin-left: 30%;
+    text-align: center;
+    border-radius: 10px;
+   
+}
+
+mat-form-field{
+    margin-top: 1rem;
+    width: 80%;
+}
+
+h1{
+    padding-top: 1.5rem;
+    font-family:  'Bahnschrift SemiBold';
+}
+
+#register{
+    width: 40vw;
+    margin-left: 30%;
+    display: flex;
+    padding: .5rem;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+span{
+    color: black;
+}
+p{
+    margin-left: auto;
+    margin-right: auto;
+    color: blue;
+}

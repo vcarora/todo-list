@@ -1,0 +1,47 @@
+<div id="list-container" #screen>
+
+    <h1 id="title">
+        {{list?.list_name}}
+    </h1>
+    <p id="description">
+        {{list?.description}}
+    </p>
+    <div class="items" id="items" *ngFor="let item of list?.itemList" [hidden]="hide" >
+        <div class="task" (click)="taskCompleted(item)"> 
+            <div>
+                <!-- <input type="checkbox" *ngIf="item?.status "   (change)="taskCompleted(item)"> -->
+                <input type="checkbox"   (change)="taskCompleted(item)">
+                <span>   {{item?.name}}</span> 
+            </div>
+           
+             <button class="delete" mat-icon-button (click)="deleteItem(list,item)" ><mat-icon>cancel</mat-icon></button>
+        </div>
+    </div>
+
+    <div id="add-item" [hidden]="visible">
+        <form (ngSubmit)="addItem(list?.id,itemForm)" #itemForm="ngForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Item name</mat-label>
+                <input matInput type="text" name="name" #name="ngModel"  [(ngModel)]="formItem.name" required>
+                <mat-error *ngIf="name?.errors?.['required']">
+                    Title is required.
+                </mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="warn" type="submit" [disabled]="itemForm.form.invalid">save</button>
+        </form>
+    </div>
+    <div class="icons" [hidden]="hide">
+        <button mat-icon-button color="primary" (click)="share()"  ><mat-icon>share</mat-icon></button>
+        <button mat-icon-button color="primary" (click)="appear()" ><mat-icon>add</mat-icon></button>
+        <button mat-icon-button color="primary" (click)="edit(list)">
+            <mat-icon>edit</mat-icon>
+          </button>   
+          <button mat-icon-button color="primary" (click)="delete(list)">
+            <mat-icon>delete</mat-icon>
+          </button>       
+    </div>
+    <div id="download">
+        <img #canvas>
+        <a #downloadLink></a>
+      </div>
+</div>

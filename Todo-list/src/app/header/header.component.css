@@ -1,0 +1,51 @@
+nav{
+    width: 100%;
+    background-color: blueviolet;
+    position: sticky;   
+}
+
+#nav-container{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+   
+
+}
+#brand-name{
+    margin-left:2rem;
+}
+
+h1{    
+    color: aliceblue;
+    vertical-align: middle;
+    margin: .3rem;
+    font-family: 'forte';
+    font-size: 3rem;
+    
+   
+
+}
+button{
+   
+    margin-right: 1rem;
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+    color: aliceblue;
+}
+#sub-nav{
+    width: 30%;
+    margin-left: auto;
+    margin-right: 2%;
+    display: flex;
+    justify-content: space-around;
+}
+.links{
+    font-weight: bold;
+    color: aliceblue;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
